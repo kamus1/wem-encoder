@@ -17,7 +17,7 @@ sh build.sh --windows                         # cross-compiles build/encode.exe 
 ```
 
 - **Input:** a 16-bit PCM WAV, any rate, 1–8 channels.
-- **On Windows,** `wav2wem.py` uses `build\encode.exe`. Cross-compile it on Linux with `sh build.sh --windows`. It is static and imports only KERNEL32, SHELL32 and the UCRT that ships with Windows 10/11.
+- **On Windows,** `wav2wem.py` uses `build\encode.exe`. Download it from the [releases](https://github.com/kamus1/wem-encoder/releases) or cross-compile it on Linux with `sh build.sh --windows`. GitHub Actions builds each release from the tagged source, with a sha256 to check the download. It is static and needs only DLLs that ship with Windows.
 - **Checking against Wwise:** `check.py` compares the result with a `.wem` that Wwise made from the same `.wav`. It needs [ww2ogg](https://github.com/hcs64/ww2ogg) and revorb, found in the PATH or in a folder given with `--tools`.
 
 ```sh
